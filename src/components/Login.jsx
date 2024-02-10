@@ -23,7 +23,9 @@ const Login = () => {
             if (response.data.status=="success") {
                 alert("Login succesfful")
                 
-                navigate("/addpost")
+                console.log(response.data.userData._id)
+                
+                //navigate("/addpost")
 
                 // setData(
                 //     {
