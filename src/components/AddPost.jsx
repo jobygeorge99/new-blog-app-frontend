@@ -6,7 +6,7 @@ const AddPost = () => {
 
     const [data,setData]= new useState(
         {
-            "userid":"",
+            "userid":sessionStorage.getItem("userId"),
             "post":""
         }
     )
@@ -19,10 +19,15 @@ const AddPost = () => {
         axios.post("http://localhost:3001/api/post/add",data).then((response)=>{
             console.log(response.data)
             if (response.data.status=="success") {
-                alert("Post submitted succesfful")
-                
-            
 
+                alert("Post submitted succesfful")
+                setData(
+                    {
+                        "userid":sessionStorage.getItem("userId"),
+                        "post":""
+                    }
+                )
+        
             } else {
                 
                 alert("Error")

@@ -24,8 +24,8 @@ const Login = () => {
                 alert("Login succesfful")
                 
                 console.log(response.data.userData._id)
-                
-                //navigate("/addpost")
+                sessionStorage.setItem("userId",response.data.userData._id)
+                navigate("/addpost")
 
                 // setData(
                 //     {
