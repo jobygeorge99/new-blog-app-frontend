@@ -23,6 +23,8 @@ const Login = () => {
             if (response.data.status=="success") {
                 alert("Login succesfful")
                 
+                console.log(response.data.userData._id)
+                sessionStorage.setItem("userId",response.data.userData._id)
                 navigate("/addpost")
 
                 // setData(
