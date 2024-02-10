@@ -20,6 +20,9 @@ const NavBar = () => {
                     <Link className="nav-link" to="/viewposts">View All Posts</Link>
                     </li>
                     <li className="nav-item">
+                    <Link className="nav-link" to="/myposts">View My Posts</Link>
+                    </li>
+                    <li className="nav-item">
                     <Link className="nav-link" to="#">Logout</Link>
                     </li>
                 </ul>
