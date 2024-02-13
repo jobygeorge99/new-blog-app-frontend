@@ -18,6 +18,20 @@ const Myposts = () => {
         })
     }
 
+    const deletePost=(id)=>{
+
+        let data = { "_id":id }
+
+        axios.post("http://localhost:3001/api/post/delete",data).then((response)=>{
+
+            if (response.data.status=="success") {
+                alert("post deleted")
+                getPosts()
+            }
+            
+        })
+    }
+
     useEffect(()=>{getPosts()},[])
 
   return (
@@ -35,6 +49,7 @@ const Myposts = () => {
                                         <div className="card-body">
                                             <h6 className="card-subtitle mb-2 text-body-secondary">{value.postedDate}</h6>
                                             <p className="card-text">{value.post}</p>
+                                            <div className="button btn btn-danger" onClick={()=>{deletePost(value._id)}}>Delete</div>
                                         </div>
                                     </div>
                                 </div>
