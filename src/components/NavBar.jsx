@@ -12,6 +12,11 @@ const NavBar = () => {
     }
   })
 
+  const logOutAction = ()=>{
+    sessionStorage.clear()
+    navigate("/")
+  }
+
   return (
     <div>
         
@@ -33,7 +38,7 @@ const NavBar = () => {
                     <Link className="nav-link" to="/myposts">View My Posts</Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link" to="#">Logout</Link>
+                    <button className="nav-link" onClick={logOutAction}>Logout</button>
                     </li>
                 </ul>
                 </div>
